@@ -1,70 +1,86 @@
-/* General background */
-body.contact-page {
+/* Reset */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('background.png') no-repeat center center/cover;
+  box-sizing: border-box;
+}
+
+/* Body with background image */
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("https://slowlivingcompany.com/background.png") no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-/* Contact form container */
-.contact-container {
-  background: rgba(255, 255, 255, 0.85); /* semi-transparent card */
+/* Form container */
+.form-container {
+  background: rgba(0, 128, 0, 0.8); /* Green glassy effect */
   padding: 40px;
   border-radius: 15px;
-  max-width: 450px;
-  width: 90%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  width: 350px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(5px);
+  color: #fff;
 }
 
-.contact-container h1 {
-  margin-bottom: 10px;
-  font-size: 28px;
-  color: #2c3e50;
-}
-
-.contact-container p {
+/* Heading */
+.form-container h2 {
   margin-bottom: 20px;
-  color: #555;
+  font-size: 24px;
+  font-weight: 600;
 }
 
-/* Form elements */
-.contact-form input,
-.contact-form textarea {
+/* Input fields */
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"] {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 15px;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 10px;
   outline: none;
-  transition: border 0.3s ease;
+  background: #e9f5ec;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #27ae60;
+/* On focus */
+.form-container input:focus {
+  background: #d3f0d8;
+  border: 2px solid #2e8b57;
 }
 
 /* Button */
-.contact-form button {
+.form-container button {
   width: 100%;
-  padding: 14px;
+  padding: 12px;
+  margin-top: 15px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  background: #2e8b57; /* dark green */
+  color: #fff;
   font-size: 16px;
-  background: linear-gradient(135deg, #27ae60, #2ecc71);
-  color: white;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s;
+  transition: 0.3s;
 }
 
-.contact-form button:hover {
-  background: linear-gradient(135deg, #219150, #27ae60);
-  transform: scale(1.03);
+.form-container button:hover {
+  background: #228b22;
+}
+
+/* Small text */
+.form-container p {
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.form-container p a {
+  color: #d3f0d8;
+  text-decoration: underline;
 }
