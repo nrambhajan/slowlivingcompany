@@ -1,82 +1,98 @@
-body {
+/* Reset & Base */
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: url('background.png') no-repeat center center fixed;
-  background-size: cover;
-  color: white;
-  text-align: center;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
   height: 100vh;
+  background: url('background.jpg') no-repeat center center/cover;
+  color: #fff;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
+  text-align: center;
 }
 
-/* Overlay for better readability */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Dark overlay for readability */
+.overlay {
+  background: rgba(0, 0, 0, 0.55);
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.3);
-  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
-h1 {
-  font-size: 4em;
-  margin-bottom: 20px;
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-p {
-  font-size: 1.5em;
-  margin-bottom: 30px;
+/* Content Box */
+.content {
   max-width: 600px;
 }
 
-.coming-soon {
-  font-size: 1.5em;
-  font-weight: bold;
-  background: #2e7d32; /* forest green */
-  padding: 15px 30px;
-  border-radius: 10px;
-  transition: 0.3s;
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
-.coming-soon:hover {
-  background: #1b5e20;
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #f0f0f0;
 }
 
-/* 🔹 Mobile responsiveness */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2.5em;
-  }
-  p {
-    font-size: 1.1em;
-    padding: 0 20px;
-  }
-  .coming-soon {
-    font-size: 1.2em;
-    padding: 12px 24px;
-  }
+/* Form */
+.notify-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
 }
 
+.notify-form input {
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  width: 250px;
+  outline: none;
+}
+
+.notify-form button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #4CAF50;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.notify-form button:hover {
+  background: #45a049;
+}
+
+/* Note */
+.note {
+  font-size: 0.9rem;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* Mobile adjustments */
 @media (max-width: 480px) {
   h1 {
-    font-size: 2em;
+    font-size: 1.8rem;
   }
-  p {
-    font-size: 1em;
+  .tagline {
+    font-size: 1rem;
   }
-  .coming-soon {
-    font-size: 1em;
-    padding: 10px 20px;
+  .notify-form input {
+    width: 100%;
   }
 }
