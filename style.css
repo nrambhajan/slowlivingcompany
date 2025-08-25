@@ -5,7 +5,6 @@
   box-sizing: border-box;
 }
 
-/* Body with background image */
 body {
   font-family: "Poppins", sans-serif;
   background: url("https://slowlivingcompany.com/background.png") no-repeat center center fixed;
@@ -16,9 +15,16 @@ body {
   align-items: center;
 }
 
+/* Contact page same style */
+body.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Form container */
 .form-container {
-  background: rgba(0, 128, 0, 0.8); /* Green glassy effect */
+  background: rgba(0, 128, 0, 0.7); /* translucent green */
   padding: 40px;
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
@@ -27,32 +33,38 @@ body {
   color: #fff;
 }
 
-/* Heading */
+/* Headings */
 .form-container h2 {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   font-size: 24px;
   font-weight: 600;
 }
 
-/* Input fields */
+.form-container p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #e0f0e0;
+}
+
+/* Inputs */
 .form-container input[type="text"],
 .form-container input[type="email"],
-.form-container input[type="password"] {
+.form-container textarea {
   width: 100%;
   padding: 12px 15px;
-  margin: 12px 0;
+  margin: 10px 0;
   border: none;
   border-radius: 10px;
-  outline: none;
-  background: #e9f5ec;
+  background: rgba(255,255,255,0.9);
   font-size: 14px;
+  outline: none;
   transition: 0.3s;
 }
 
-/* On focus */
-.form-container input:focus {
-  background: #d3f0d8;
-  border: 2px solid #2e8b57;
+.form-container input:focus,
+.form-container textarea:focus {
+  border: 2px solid #2ecc71;
+  background: #f0fff4;
 }
 
 /* Button */
@@ -62,7 +74,7 @@ body {
   margin-top: 15px;
   border: none;
   border-radius: 10px;
-  background: #2e8b57; /* dark green */
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
   color: #fff;
   font-size: 16px;
   font-weight: bold;
@@ -71,16 +83,6 @@ body {
 }
 
 .form-container button:hover {
-  background: #228b22;
-}
-
-/* Small text */
-.form-container p {
-  margin-top: 15px;
-  font-size: 13px;
-}
-
-.form-container p a {
-  color: #d3f0d8;
-  text-decoration: underline;
+  background: linear-gradient(135deg, #219150, #27ae60);
+  transform: scale(1.05);
 }
