@@ -1,98 +1,70 @@
-/* Reset & Base */
-* {
+/* General styles */
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
-  height: 100vh;
-  background: url('background.png') no-repeat center center/cover;
+  font-family: 'Playfair Display', serif;
+  background: url('background.jpg') no-repeat center center/cover;
   color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-align: center;
-}
-
-/* Dark overlay for readability */
-.overlay {
-  background: rgba(0, 0, 0, 0.55);
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
 }
 
-/* Content Box */
-.content {
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* soft dark overlay */
+  padding: 40px;
+  border-radius: 12px;
   max-width: 600px;
 }
 
 /* Headings */
 h1 {
   font-size: 2.5rem;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
+  margin-bottom: 10px;
 }
 
-.tagline {
+.coming-soon {
   font-size: 1.2rem;
   margin-bottom: 25px;
-  color: #f0f0f0;
 }
 
-/* Form */
+/* Form styles */
 .notify-form {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-bottom: 15px;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.notify-form input {
+.notify-form input,
+.notify-form textarea {
   padding: 12px;
-  border-radius: 25px;
   border: none;
-  width: 250px;
+  border-radius: 8px;
   outline: none;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+.notify-form textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* Button */
 .notify-form button {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 25px;
+  padding: 12px;
   background: #4CAF50;
   color: #fff;
-  cursor: pointer;
   font-size: 1rem;
-  transition: 0.3s ease;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 .notify-form button:hover {
   background: #45a049;
-}
-
-/* Note */
-.note {
-  font-size: 0.9rem;
-  color: #ddd;
-  margin-top: 10px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-  .tagline {
-    font-size: 1rem;
-  }
-  .notify-form input {
-    width: 100%;
-  }
 }
