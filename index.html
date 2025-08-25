@@ -13,10 +13,15 @@
       <h1>Slow Living Company</h1>
       <p class="tagline">Experience homestays in the green mountains of Himachal – coming soon!</p>
       
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="notify-form">
-        <input type="email" name="email" placeholder="Enter your email" required>
-        <button type="submit">Notify Me</button>
-      </form>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+  <label for="email">Email:</label>
+  <input type="email" name="email" required>
+
+  <!-- Honeypot field (hidden) -->
+  <input type="text" name="_gotcha" style="display:none">
+
+  <button type="submit">Notify Me</button>
+</form>
 
       <p class="note">We respect your privacy. No spam, ever.</p>
     </div>
