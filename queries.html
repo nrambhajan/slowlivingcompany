@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slow Living — Open Queries</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f8fafc; padding: 20px; }
+    h1 { color: #2b3a55; }
+    .card { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 10px; }
+    .paid { color: green; font-weight: bold; }
+    .pending { color: orange; font-weight: bold; }
+    .btn { background: #2b3a55; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Open Queries</h1>
+  <p>Below are pending bookings and payment statuses.</p>
+
+  <div id="queryList">Loading...</div>
+
+  <script>
+    async function loadQueries() {
+      try {
+        const res = await fetch("queries.json"); // file in same repo
+        const data = await res.json();
+        renderQueries(data);
+      } catch (e) {
+        document.getElementById("queryList").innerText = "Unable to load queries.";
+      }
+    }
+
+    function renderQueries(data) {
+      const div = document.getElementById("queryList");
+      div.innerHTML = "";
+      data.forEach(q => {
+        const item = document.createElement("div");
+        item.className = "card";
+        item.innerHTML = `
+          <strong>${q.title}</strong><br>
+          Guest: ${q.guestName} <br>
+          Date: ${q.date}<br>
+          Amount: ₹${q.amount}<br>
+          Status: <span class="${q.paid ? "paid" : "pending"}">${q.paid ? "Paid" : "Pending"}</span><br>
+          ${q.paid ? "" : `<a href="${q.paymentLink}" target="_blank"><button class="btn">Pay Now</button></a>`}
+        `;
+        div.appendChild(item);
+      });
+    }
+
+    loadQueries();
+  </script>
+</body>
+</html>
