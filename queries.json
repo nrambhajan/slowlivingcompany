@@ -1,0 +1,19 @@
+[
+  {
+    "id": "q1",
+    "title": "Advance booking - 2 nights stay",
+    "guestName": "Asha Menon",
+    "date": "2025-11-12",
+    "amount": 3500,
+    "paid": false,
+    "paymentLink": "https://rzp.io/l/examplelink1"
+  },
+  {
+    "id": "q2",
+    "title": "Pending balance payment",
+    "guestName": "Ravi Kumar",
+    "date": "2025-11-15",
+    "amount": 1500,
+    "paid": true
+  }
+]
