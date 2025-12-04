@@ -1,68 +1,167 @@
-/* Reset + mobile friendly box sizing */
+/* ===================== */
+/* Base + Theme          */
+/* ===================== */
+
+:root {
+  --sl-bg: #050905;
+  --sl-bg-soft: #121911;
+  --sl-accent: #D9B16F;
+  --sl-accent-soft: #C7A05A;
+  --sl-text: #f6e7c8;
+  --sl-muted: #c1b59a;
+  --font-serif: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Work Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Background setup */
 body {
-  height: 100vh;
-  background: url('background.png') no-repeat center center fixed;
-  background-size: cover;
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background-color: var(--sl-bg);
+  color: var(--sl-text);
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
 }
 
-/* Dark overlay */
+/* ===================== */
+/* Landing / Hero        */
+/* ===================== */
+
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
+  position: relative;
+  background:
+    radial-gradient(circle at top, #1a2a1a 0%, #0d150d 40%, var(--sl-bg) 70%, #020402 100%);
+  flex: 1;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 20px;
+  padding: 48px 20px;
+  overflow: hidden;
 }
 
-/* Title */
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+}
+
+.logo-shell {
+  padding: 0 0 24px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 32px;
+}
+
+.logo-img {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  display: block;
+}
+
+.eyebrow {
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--sl-muted);
+  margin-bottom: 12px;
+}
+
 .title {
-  color: #fff;
+  font-family: var(--font-serif);
+  color: var(--sl-text);
   font-size: 3rem;
-  margin-bottom: 20px;
-  max-width: 800px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 18px;
+  max-width: 780px;
 }
 
-/* Button */
+.subtitle {
+  max-width: 620px;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--sl-muted);
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===================== */
+/* Buttons               */
+/* ===================== */
+
 .btn {
   display: inline-block;
-  background-color: #28a745;
-  color: white;
-  padding: 12px 25px;
+  padding: 12px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
   text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 8px;
-  transition: background 0.3s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.1s ease, box-shadow 0.2s ease;
 }
 
-.btn:hover {
-  background-color: #218838;
+.btn.primary {
+  background-color: #D9B16F;
+  color: #1a1408;
+  box-shadow: 0 10px 30px rgba(217, 177, 111, 0.25);
+}
+
+.btn.primary:hover {
+  background-color: #C7A05A;
+  transform: translateY(-1px);
+  box-shadow: 0 12px 35px rgba(217, 177, 111, 0.3);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--sl-text);
+  border-color: rgba(217, 177, 111, 0.4);
+}
+
+.btn.ghost:hover {
+  background-color: rgba(217, 177, 111, 0.15);
+  border-color: #D9B16F;
 }
 
 /* Contact page form */
 .contact-container {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(5, 9, 5, 0.9);
   padding: 20px;
   width: 90%;
   max-width: 500px;
   border-radius: 10px;
-  color: #fff;
+  color: var(--sl-text);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(217, 177, 111, 0.35);
 }
 
 .contact-container h2 {
   text-align: center;
   margin-bottom: 20px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.92rem;
+  color: var(--sl-muted);
 }
 
 .contact-container input,
@@ -73,12 +172,15 @@ body {
   border: none;
   border-radius: 5px;
   font-size: 1rem;
+  background: #121811;
+  color: var(--sl-text);
+  border: 1px solid rgba(193, 181, 154, 0.25);
 }
 
 .contact-container button {
   width: 100%;
-  background: #28a745;
-  color: #fff;
+  background: #D9B16F;
+  color: #1a1408;
   border: none;
   padding: 12px;
   border-radius: 8px;
@@ -87,7 +189,7 @@ body {
 }
 
 .contact-container button:hover {
-  background: #218838;
+  background: #C7A05A;
 }
 
 /* ===================== */
@@ -95,14 +197,26 @@ body {
 /* ===================== */
 
 @media (max-width: 768px) {
+  .logo-shell {
+    padding: 18px 32px 22px;
+  }
+  
+  .logo-complete {
+    max-width: 100%;
+  }
+
   .title {
     font-size: 2.2rem;
     padding: 0 15px;
   }
 
+  .subtitle {
+    font-size: 0.98rem;
+  }
+
   .btn {
-    font-size: 1rem;
-    padding: 10px 20px;
+    font-size: 0.98rem;
+    padding: 10px 22px;
   }
 }
 

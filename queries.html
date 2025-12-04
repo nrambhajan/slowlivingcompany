@@ -6,12 +6,57 @@
   <title>Slow Living — Open Queries</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: Arial, sans-serif; background: #f8fafc; padding: 20px; }
-    h1 { color: #2b3a55; }
-    .card { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin-bottom: 10px; }
-    .paid { color: green; font-weight: bold; }
-    .pending { color: orange; font-weight: bold; }
-    .btn { background: #2b3a55; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1c2719 0%, #050905 55%, #020402 100%);
+      padding: 24px 16px 40px;
+      color: var(--sl-text);
+      display: block;
+    }
+
+    h1 {
+      color: var(--sl-text);
+      margin-bottom: 8px;
+    }
+
+    p {
+      color: var(--sl-muted);
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: rgba(5, 9, 5, 0.9);
+      padding: 16px 18px;
+      border-radius: 10px;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+      margin-bottom: 14px;
+      border: 1px solid rgba(208, 164, 95, 0.35);
+    }
+
+    .paid {
+      color: #76c893;
+      font-weight: 600;
+    }
+
+    .pending {
+      color: var(--sl-accent);
+      font-weight: 600;
+    }
+
+    .btn {
+      background: var(--sl-accent);
+      color: #22170a;
+      border: none;
+      padding: 6px 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      background: var(--sl-accent-soft);
+    }
   </style>
 </head>
 <body>
